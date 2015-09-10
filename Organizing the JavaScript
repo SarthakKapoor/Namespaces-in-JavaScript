@@ -1,0 +1,24 @@
+// Declaring my main namespace
+var myapplication = myapplication || {};
+
+// Declaring modules usermodule
+myapplication.usermodule = (function() {  
+    // createMessage: only accessible inside this module
+    var createMessage = function(message) {
+        return "Hello! " + message;
+    }
+
+    return {
+        // sayHello is a public method
+        sayHello: function(message) {
+            return createMessage(message);
+        }
+    }
+})();
+
+// Declaring another module
+myapplication.adminmodule = (function(){  
+    // your code here
+})()
+// This is how we call sayHello
+myapplication.usermodule.sayHello("This is my module");  
